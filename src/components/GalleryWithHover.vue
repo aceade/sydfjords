@@ -4,7 +4,7 @@
 // not used because I can't line it up nicely
 
 export interface ImageDetails {
-    source: string;
+    source?: string;
     altText: string;
     caption: string;
     srcset: string;
@@ -18,7 +18,7 @@ defineProps<{images: ImageDetails[]}>();
 <template>
     <div class="gallery">
         <div class="galleryItem" v-for="item of images">
-            <img loading="lazy" class="defaultImage" v-bind:src="item.source" v-bind:srcset="item.srcset" v-bind:sizes="item.sizes" v-bind:alt="item.altText">
+            <img loading="lazy" class="defaultImage" v-bind:srcset="item.srcset" v-bind:sizes="item.sizes" v-bind:alt="item.altText">
             <p>{{ item.caption }}</p>
         </div>
     </div>
