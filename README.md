@@ -3,7 +3,7 @@ A practice project to teach myself responsive design. Based upon a
 
 ## Building
 
-This uses (pnpm)[https://pnpm.io/] instead of npm. However, most of the commands should work roughly the same.
+This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands should work roughly the same.
 
 - `pnpm install`
 - `pnpm run dev` runs a development build.
