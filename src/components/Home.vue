@@ -5,7 +5,7 @@ const gallery: ImageDetails[] = [{
   source: "/borealis-480w.webp",
   caption: "The aurora australis over the fjords. Nulla pharetra diam sit amet nisl suscipit adipiscing. Augue lacus viverra vitae congue eu consequat ac felis.",
   altText: "An aurora australis.",
-  srcset: "/borealis-480w.webp 480w, /borealis-800w.webp 800w, /borealis-1366w.webp 1366w, /borealis-1920w.webp 1920w",
+  srcset: "/sydfjords/borealis-480w.webp 480w, /sydfjords/borealis-800w.webp 800w, /sydfjords/borealis-1366w.webp 1366w, /sydfjords/borealis-1920w.webp 1920w",
   sizes: "(max-width: 600px) 480px, 800px, 1366px, 1920px"
 },{
   source: "/town2-480w.webp",
