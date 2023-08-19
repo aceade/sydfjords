@@ -5,7 +5,7 @@ A practice project to teach myself responsive web design with Vue. The concept h
 
 This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands should work roughly the same.
 
-- `pnpm install` installs dependencies. Unlike npm, it relies on 
+- `pnpm install` installs dependencies. Unlike npm, it adds dependencies into a global store instead of a per-project node_modules folder.
 - `pnpm run dev` runs a development build.
 - `pnpm run build` runs a production build. This is also used during the automated deploy.
 
