@@ -30,8 +30,8 @@ const gallery: ImageDetails[] = [{
 </script>
 
 <template>
-    <img id="hero" srcset="/hero-480w.webp 480w, /hero-800w.webp 800w, /hero-1080w.webp 1080w, /hero-1366w.webp 1366w, /hero-1920w.webp 1920w"
-     sizes="(max-width: 600px) 480px, 800px, 1080px, 1366px, 1920px"
+    <img id="hero" srcset="/hero-480w.webp 480w, /hero-800w.webp 800w, /hero-1080w.webp 1080w, /hero-1366w.webp 1366w"
+     sizes="(max-width: 600px) 480px, (max-width: 1000px) 800px, (max-width: 1300px) 1080px, (max-width: 1440px) 1366px"
      src="/hero-480w.webp"
      alt="Snowy mountains above a lake in a wild setting">
      <h1>Welcome to a land steeped in magic</h1>
@@ -42,7 +42,7 @@ const gallery: ImageDetails[] = [{
 #hero {
   margin-top: 20px;
   margin-bottom: 50px;
-  max-width: 100%;
+  max-width: 1440px;
 }
 
 </style>

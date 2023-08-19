@@ -72,7 +72,7 @@ defineProps<{images: ImageDetails[]}>();
     }
 
     .galleryItem img {
-        max-width: 600px;
+        max-width: 800px;
     }
 }
 
