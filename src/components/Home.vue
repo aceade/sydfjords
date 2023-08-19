@@ -30,7 +30,7 @@ const gallery: ImageDetails[] = [{
 </script>
 
 <template>
-    <img id="hero" srcset="/hero-480w.webp 480w, /hero-800w.webp 800w, /hero-1366w.webp 1366w, /hero.webp 1920w"
+    <img id="hero" srcset="/hero-480w.webp 480w, /hero-800w.webp 800w, /hero-1366w.webp 1366w, /hero-1920w.webp 1920w"
      sizes="(max-width: 600px) 480px, 800px, 1366px, 1920px"
      src="/hero-800w.webp"
      alt="Snowy mountains above a lake in a wild setting">
