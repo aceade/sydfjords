@@ -4,7 +4,7 @@
     <nav class="topnav">
         <router-link to="/">Home</router-link>
         <div class="dropdown">
-            <button class="dropbtn">See and Do</button>
+            <button class="dropbtn" @click="openSubMenu()">See and Do</button>
             <div class="dropdown-content">
                 <router-link to="/colwdvatn">Coldwatvn</router-link>
                 <router-link to="/">Loremvik</router-link>
@@ -19,12 +19,26 @@
 
 <script setup lang="js">
 
+
 function openMenu() {
-    let x = document.querySelector("nav");
-    if (x.className === "topnav") {
-        x.className += " responsive";
+    let nav = document.querySelector("nav");
+    if (nav.className === "topnav") {
+        nav.className += " responsive";
     } else {
-        x.className = "topnav";
+        nav.className = "topnav";
+
+        // prevent this hanging open
+        let menu = document.querySelector(".dropdown-content");
+        menu.style.display = "none";
+    }
+}
+
+function openSubMenu() {
+    let menu = document.querySelector(".dropdown-content");
+    if (menu.style.display === "none") {
+        menu.style.display = "block";
+    } else {
+        menu.style.display = "none";
     }
 }
 
@@ -34,6 +48,7 @@ function openMenu() {
 
 .topnav {
     overflow: hidden;
+    float:right;
 }
 
 /* Style the links inside the navigation bar */
@@ -69,13 +84,14 @@ function openMenu() {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    cursor: pointer;
 }
 
 /* Style the dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #ff8b68;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
