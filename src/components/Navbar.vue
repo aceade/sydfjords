@@ -1,101 +1,157 @@
+<!-- Originally derived from W3Schools: https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp -->
 
 <template>
-    <nav>
-        <ul>
-            <li>
-                <router-link to="/">Home</router-link>
-            </li>
-            <li class="dropdown">
-                <button>See and Do</button>
-                <div class="dropdown-menu">
-                    <router-link to="/colwdvatn">Coldwatvn</router-link>
-                    <router-link to="/">Loremvik</router-link>
-                    <router-link to="/">Ipsumvatn</router-link>
-                </div>
-            </li>
-            <li>
-                <a href="#">Stay</a>
-            </li>
-            <li>
-                <a href="#">Get Here</a>
-            </li>
-        </ul>
+    <nav class="topnav">
+        <router-link to="/">Home</router-link>
+        <div class="dropdown">
+            <button class="dropbtn">See and Do</button>
+            <div class="dropdown-content">
+                <router-link to="/colwdvatn">Coldwatvn</router-link>
+                <router-link to="/">Loremvik</router-link>
+                <router-link to="/">Ipsumvatn</router-link>
+            </div>
+        </div>
+        <router-link to="/">Stay</router-link>
+        <router-link to="/">Get Here</router-link>
+        <a class="icon" @click="openMenu()">&#9776;</a>
     </nav>
 </template>
 
+<script setup lang="js">
+
+function openMenu() {
+    let x = document.querySelector("nav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+
+</script>
+
 <style scoped>
-    ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        font-size: 1.2rem;
-        gap: 1rem;
-    }
 
-    li {
-        padding: 10px;
-        background-color: #ff8b68;
-        border: 0px;
-        display: flex;
-    }
+.topnav {
+    overflow: hidden;
+}
 
-    a {
-        color: black;
-        border-radius: 5px;
-        padding: 10px;
-    }
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
 
-    a:hover {
-        color: black;
-        background-color: #f0efed;
-    }
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+    cursor: pointer;
+}
 
-    .dropdown {
-        padding: 5px;
-        display: block;
-    }
+/* Dropdown container - needed to position the dropdown content */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
 
-    .dropdown button {
-        background-color: #ff8b68;
-        padding: 10px;
-        border: 0px;
-        text-decoration: underline;
-        font-size: 1.2rem;
-        border-radius: 5px;
-    }
+/* Style the dropdown button to fit inside the topnav */
+.dropdown .dropbtn {
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
 
-    .dropdown button:hover {
-        background-color: #f0efed;
-        color: black;
-        padding: 10px;
-        border: 0px;
-        text-decoration: underline;
-        font-size: 1.2rem;
-    }
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-    .dropdown-menu {
+/* Style the links inside the dropdown */
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* Add a dark background on topnav links and the dropdown button on hover */
+.topnav a:hover,
+.dropdown:hover .dropbtn {
+    background-color: #555;
+    color: white;
+}
+
+/* Add a grey background to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Show the dropdown menu when the user moves the mouse over the dropdown button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+
+    .topnav a:not(:first-child),
+    .dropdown .dropbtn {
         display: none;
-        position: absolute;
-        background-color: #f0efed;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        border-radius: 8px;
-        z-index: 1;
     }
 
-    /* Links inside the dropdown */
-    .dropdown-menu a {
-        color: black;
-        padding: 12px 16px;
+    .topnav a.icon {
+        float: right;
         display: block;
     }
+}
 
-    /* Change color of dropdown links on hover */
-    .dropdown-menu a:hover {background-color: #ddd;}
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
 
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-menu {display: block;}
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 
-    /* Change the background color of the dropdown button when the dropdown menu is shown */
-    .dropdown:hover .dropbtn {background-color: #3e8e41;}
-</style>
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .topnav.responsive .dropdown {
+        float: none;
+    }
+
+    .topnav.responsive .dropdown-content {
+        position: relative;
+    }
+
+    .topnav.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+}</style>
