@@ -1,6 +1,7 @@
 <!-- Originally derived from W3Schools: https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp -->
 
 <template>
+    <img id="logo" alt="" src="/sydfjords/icons/Sydfjords_Logo_1.png">
     <nav class="topnav">
         <router-link to="/">Home</router-link>
         <div class="dropdown">
@@ -17,34 +18,50 @@
     </nav>
 </template>
 
-<script setup lang="js">
+<script setup lang="ts">
 
 
 function openMenu() {
-    let nav = document.querySelector("nav");
-    if (nav.className === "topnav") {
-        nav.className += " responsive";
-    } else {
-        nav.className = "topnav";
+    const nav = document.querySelector("nav");
 
-        // prevent this hanging open
-        let menu = document.querySelector(".dropdown-content");
-        menu.style.display = "none";
+    if (nav) {
+        if (nav.className === "topnav") {
+            nav.className += " responsive";
+        } else {
+            nav.className = "topnav";
+        }
+
+        // prevent this hanging open or needing to be clicked twice upon loading the page
+        const menu = document.querySelector(".dropdown-content");
+        if (menu) {
+            (menu as HTMLElement).style.display = "none";
+        }
     }
+    
 }
 
 function openSubMenu() {
-    let menu = document.querySelector(".dropdown-content");
-    if (menu.style.display === "none") {
-        menu.style.display = "block";
-    } else {
-        menu.style.display = "none";
+    const menu = document.querySelector(".dropdown-content");
+    if (menu) {
+        let menuEl = menu as HTMLElement;
+        if (menuEl.style.display === "none") {
+            menuEl.style.display = "block";
+        } else {
+            menuEl.style.display = "none";
+        }
     }
+    
 }
 
 </script>
 
 <style scoped>
+
+#logo {
+    max-width: 100px;
+    border-radius: 10px;
+    opacity: 0.85;
+}
 
 .topnav {
     overflow: hidden;
