@@ -24,6 +24,7 @@
 function openMenu() {
     const nav = document.querySelector("nav");
 
+    // TypeScript's typesafety doesn't like that nav *might* be null. Even if in practice it won't be.
     if (nav) {
         if (nav.className === "topnav") {
             nav.className += " responsive";
@@ -59,7 +60,7 @@ function openSubMenu() {
 
 #logo {
     max-width: 100px;
-    border-radius: 10px;
+    border-radius: 10%;
     opacity: 0.85;
 }
 
