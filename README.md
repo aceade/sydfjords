@@ -12,3 +12,5 @@ This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands
 ## Credits
 
 All images are from [pexels.com](https://www.pexels.com/).
+
+The logo used was generated using [Canva](https://canva.com).
