@@ -51,19 +51,14 @@ defineProps<{images: ImageDetails[]}>();
     }
 }
 
-@media (min-width: 900px) and (max-width: 1366px) {
+@media (min-width: 900px) and (max-width: 1440px) {
 
-    /* .gallery {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 10px;
-    } */
     .galleryItem img {
-        max-width: 600px;
+        max-width: 900px;
     }
 }
 /* Note to self: do NOT use "repeat" */
-@media (min-width: 1440px) {
+@media (min-width: 1450px) {
     .gallery {
         display: grid;
         width: 100%;
