@@ -4,6 +4,7 @@ import App from './App.vue';
 import * as VueRouter from "vue-router";
 import Home from './components/Home.vue';
 import Colwdvatn from './components/Colwdvatn.vue';
+import AboutVue from './components/About.vue';
 
 const routes = [{
   path: "/",
@@ -11,6 +12,9 @@ const routes = [{
 }, {
   path: "/colwdvatn",
   component: Colwdvatn
+}, {
+  path: "/about",
+  component: AboutVue
 }];
 
 const router = VueRouter.createRouter({

@@ -14,6 +14,7 @@
         </div>
         <router-link to="/">Stay</router-link>
         <router-link to="/">Get Here</router-link>
+        <router-link to="/about">About</router-link>
         <a class="icon" @click="openMenu()">&#9776;</a>
     </nav>
 </template>
