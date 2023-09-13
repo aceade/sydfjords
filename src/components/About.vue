@@ -37,9 +37,10 @@
             </form>
         </div>
 
-        <h2>About (for real)</h2>
+        <h2>About</h2>
         <div id="about">
             <p>This is a practice project to get better at responsive web design. It was originally derived from <a href="https://www.frontendpractice.com/projects/monogram">this practice project</a>, but I decided to create a tourism page for a fictional setting that is part Patagonia, part Iceland.</p>
+            <p>The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency.</p>
         </div>
     </div>
 </template>
@@ -106,6 +107,8 @@ function notifyResult(result: string) {
         padding-bottom: 10px;
         border-bottom: 3px solid #1a2456;
         border-radius: 0px 0px 10px 10px;
+        justify-content: center;
+        width: 100%;
     }
 
     .office {
@@ -120,7 +123,7 @@ function notifyResult(result: string) {
     }
 
     #emailForm {
-        max-width: 310px;
+        max-width: 320px;
         border-radius: 15px;
         background-color: #ff8b68;
         padding: 10px;
@@ -130,7 +133,7 @@ function notifyResult(result: string) {
     /* Using border-box to keep things consistently sized */
     #emailForm input, label, textarea, button, p {
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         border-radius: 5px;
         box-sizing: border-box;
     }
@@ -147,12 +150,29 @@ function notifyResult(result: string) {
             margin-left: 100px;
             margin-right: 100px;
         }
+
+        .office {
+            max-width: 300px;
+        }
+
+        #emailForm {
+            max-width: 600px;
+        }
     }
 
     @media screen and (min-width: 901px) {
         #container {
             margin-left: 200px;
             margin-right: 200px;
+        }
+
+        #offices {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+
+        #emailForm {
+            max-width: 900px;
         }
     }
 
