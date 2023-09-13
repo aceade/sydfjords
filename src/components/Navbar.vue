@@ -106,6 +106,13 @@ function openSubMenu() {
     cursor: pointer;
 }
 
+/* Highlight when tabbing through things with the keyboard */
+.dropbtn:focus, a:focus {
+    background-color: #ff8b68;
+    color: black;
+    
+}
+
 /* Style the dropdown content (hidden by default) */
 .dropdown-content {
     display: none;

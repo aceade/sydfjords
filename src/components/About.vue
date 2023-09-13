@@ -41,6 +41,7 @@
         <div id="about">
             <p>This is a practice project to get better at responsive web design. It was originally derived from <a href="https://www.frontendpractice.com/projects/monogram">this practice project</a>, but I decided to create a tourism page for a fictional setting that is part Patagonia, part Iceland.</p>
             <p>The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency.</p>
+            <p>If you want to take a look at the source code, you can <a href="https://github.com/aceade/sydfjords">find it here</a>.</p>
         </div>
     </div>
 </template>
