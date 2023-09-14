@@ -3,7 +3,7 @@
 
     <div id="container">
         <h1>Whale watching tours</h1>
-        <p class="blurb">Departing from Colwdvatn or Ipsemvatn, </p>
+        <p class="blurb">Few wildlife encounters can match coming face-to-face with a whale. The perfect family day out or bucket list entry.</p>
 
         <div class="showcase">
             <img loading="lazy" class="defaultImage" srcset="/sydfjords/whales/whale-320w.webp 320w, /sydfjords/whales/whale-480w.webp 480w, /sydfjords/whales/whale-600w.webp 600w, /sydfjords/whales/whale-1080w.webp 1080w, /sydfjords/whales/whale-1920w.webp" 
@@ -92,13 +92,13 @@ img {
     }
 }
 
-@media (min-width: 801px) and (max-width: 1080px) {
+@media (min-width: 801px) and (max-width: 1200px) {
     img {
         max-width: 800px;
     }
 }
 
-@media (min-width: 1081px) {
+@media (min-width: 1201px) {
     img {
         max-width: 1080px;
     }
