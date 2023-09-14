@@ -30,8 +30,8 @@ const gallery: ImageDetails[] = [{
 </script>
 
 <template>
-    <img id="hero" srcset="/sydfjords/hero-480w.webp 480w, /sydfjords/hero-800w.webp 800w, /sydfjords/hero-1080w.webp 1080w, /sydfjords/hero-1366w.webp 1366w"
-     sizes="(max-width: 600px) 480px, (max-width: 1000px) 800px, (max-width: 1366px) 1080px, (max-width: 1440px) 1366px"
+    <img id="hero" srcset="/sydfjords/hero-320w.webp 320w, /sydfjords/hero-480w.webp 480w, /sydfjords/hero-800w.webp 800w, /sydfjords/hero-1080w.webp 1080w, /sydfjords/hero-1366w.webp 1366w"
+     sizes="(max-width: 400px) 320px, (max-width: 600px) 480px, (max-width: 1000px) 800px, (max-width: 1366px) 1080px, (max-width: 1440px) 1366px"
      src="/sydfjords/hero-480w.webp"
      alt="Snowy mountains above a lake in a wild setting">
      <h1>Welcome to a land steeped in magic</h1>

@@ -155,6 +155,10 @@ function openSubMenu() {
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
 
+    #logo {
+        max-width: 50px;
+    }
+
     .topnav a:not(:first-child),
     .dropdown .dropbtn {
         display: none;
