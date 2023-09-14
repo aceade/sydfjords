@@ -40,6 +40,9 @@
             </div>
         </div>
 
+        <h2>Where can I do this?</h2>
+        <p>Tours depart from Colwdvatn and Ipsemvatn during the summer months (December to March).</p>
+
     </div>
 </template>
 
@@ -63,6 +66,7 @@ img {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .showcase p{
