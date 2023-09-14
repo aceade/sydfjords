@@ -22,6 +22,23 @@
 
 <script setup lang="ts">
 
+document.onreadystatechange = () => {
+    if (document.readyState === "complete") {
+        const links = document.querySelectorAll("a");
+        for (let i = 0; i < links.length; i++) {
+            let link = links[i];
+            if (link.className === "icon") {
+                continue;
+            }
+            link.onclick = (event: Event) => {
+                // derp
+                console.log(event);
+                closeAllMenus();
+            }
+        }
+    }
+}
+
 
 function openMenu() {
     const nav = document.querySelector("nav");
@@ -41,6 +58,11 @@ function openMenu() {
         }
     }
     
+}
+
+function closeAllMenus() {
+    (document.querySelector("nav") as HTMLElement).className = "topnav";
+    (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
 }
 
 function openSubMenu() {
