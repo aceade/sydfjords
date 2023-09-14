@@ -5,6 +5,7 @@ import * as VueRouter from "vue-router";
 import Home from './components/Home.vue';
 import Colwdvatn from './components/Colwdvatn.vue';
 import AboutVue from './components/About.vue';
+import WhaleWatchingVue from './components/WhaleWatching.vue';
 
 const routes = [{
   path: "/",
@@ -15,6 +16,9 @@ const routes = [{
 }, {
   path: "/about",
   component: AboutVue
+}, {
+  path: "/whales",
+  component: WhaleWatchingVue
 }];
 
 const router = VueRouter.createRouter({
