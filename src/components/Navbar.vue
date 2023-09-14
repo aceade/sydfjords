@@ -10,6 +10,7 @@
                 <router-link to="/colwdvatn">Coldwatvn</router-link>
                 <router-link to="/">Loremvik</router-link>
                 <router-link to="/">Ipsumvatn</router-link>
+                <router-link to="/whales">Whale-Watching</router-link>
             </div>
         </div>
         <router-link to="/">Stay</router-link>
