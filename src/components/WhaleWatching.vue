@@ -50,7 +50,7 @@
 
 <style scoped>
 #container {
-    margin: 100px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
