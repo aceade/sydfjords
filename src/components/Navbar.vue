@@ -1,7 +1,7 @@
 <!-- Originally derived from W3Schools: https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp -->
 
 <template>
-    <img id="logo" alt="" src="/icons/Sydfjords_Logo_1.png">
+    <img id="logo" alt="" src="/sydfjords/icons/Sydfjords_Logo_1.png">
     <nav class="topnav">
         <router-link to="/">Home</router-link>
         <div class="dropdown">
