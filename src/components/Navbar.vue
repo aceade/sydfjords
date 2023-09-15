@@ -1,4 +1,5 @@
 <!-- Originally derived from W3Schools: https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp -->
+<!-- The main adaptations are to force all menus to close on mobile when clicking a URL -->
 
 <template>
     <img id="logo" alt="" src="/sydfjords/icons/Sydfjords_Logo_1.png">
@@ -30,9 +31,9 @@ document.onreadystatechange = () => {
             if (link.className === "icon") {
                 continue;
             }
-            link.onclick = (event: Event) => {
-                // derp
-                console.log(event);
+            // need to declare the event, even if it isn't used, because otherwise clicking the URL does nothing
+            // I suppose this is probably like "extending" the onclick event
+            link.onclick = (_event: Event) => {
                 closeAllMenus();
             }
         }
