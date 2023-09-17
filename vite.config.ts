@@ -1,5 +1,8 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import viteImagemin from '@vheemstra/vite-plugin-imagemin';
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminWebp from 'imagemin-webp';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,6 +15,15 @@ export default defineConfig({
             includeAbsolute: false,
         },
     },
-})],
+}), viteImagemin({
+  plugins: {
+    jpg: imageminMozjpeg(),
+  },
+  makeWebp: {
+    plugins: {
+      jpg: imageminWebp(),
+    },
+  },
+}),],
   base: "/sydfjords/",
 });
