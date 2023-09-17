@@ -64,6 +64,9 @@ function openMenu() {
 function closeAllMenus() {
     (document.querySelector("nav") as HTMLElement).className = "topnav";
     (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
+    (document.querySelector(".dropbtn") as HTMLElement).onmouseover = () => {
+        (document.querySelector(".dropdown-content") as HTMLElement).style.display = "block";
+    }
 }
 
 function openSubMenu() {
