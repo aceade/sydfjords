@@ -14,3 +14,13 @@ body {
   min-width: 320px;
 }
 
+#container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input, textarea {
+  box-sizing: border-box;
+}

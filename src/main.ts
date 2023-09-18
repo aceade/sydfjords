@@ -6,6 +6,7 @@ import Home from './components/Home.vue';
 import Colwdvatn from './components/Colwdvatn.vue';
 import AboutVue from './components/About.vue';
 import WhaleWatchingVue from './components/WhaleWatching.vue';
+import HotelsVue from './components/Hotels.vue';
 
 const routes = [{
   path: "/",
@@ -19,6 +20,9 @@ const routes = [{
 }, {
   path: "/whales",
   component: WhaleWatchingVue
+}, {
+  path: "/hotels",
+  component: HotelsVue
 }];
 
 const router = VueRouter.createRouter({
