@@ -7,10 +7,11 @@ This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands
 
 - `pnpm install` installs dependencies. Unlike npm, it adds dependencies into a global store instead of a per-project node_modules folder.
 - `pnpm run dev` runs a development build.
-- `pnpm run build` runs a production build. This is also used during the automated deploy.
+- `pnpm run build` runs a production build. This is also used during the automated deployment.
+- `pnpm run preview` deploys a local preview of the production build.
+- `pnpm update` updates all outdated dependencies.
 
-## Credits
+## Credits/Sources
 
-All images are from [pexels.com](https://www.pexels.com/).
-
-The logo used was generated using [Canva](https://canva.com).
+All images are from [pexels.com](https://www.pexels.com/), except for the logo, which was generated using [Canva](https://canva.com).
+The navbar is derived from [this W3Schools example](https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp), with some modifications to fix menus hanging open.

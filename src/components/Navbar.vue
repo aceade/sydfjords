@@ -14,7 +14,7 @@
                 <router-link to="/whales">Whale-Watching</router-link>
             </div>
         </div>
-        <router-link to="/">Stay</router-link>
+        <router-link to="/hotels">Stay</router-link>
         <router-link to="/">Get Here</router-link>
         <router-link to="/about">About</router-link>
         <a class="icon" @click="openMenu()">&#9776;</a>
@@ -61,11 +61,17 @@ function openMenu() {
     
 }
 
+/**
+ * Cleans up and resets everything.
+ */
 function closeAllMenus() {
     (document.querySelector("nav") as HTMLElement).className = "topnav";
     (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
     (document.querySelector(".dropbtn") as HTMLElement).onmouseover = () => {
         (document.querySelector(".dropdown-content") as HTMLElement).style.display = "block";
+    }
+    (document.querySelector(".dropdown-content") as HTMLElement).onmouseleave = () => {
+        (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
     }
 }
 
