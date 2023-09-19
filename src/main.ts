@@ -7,6 +7,9 @@ import Colwdvatn from './components/Colwdvatn.vue';
 import AboutVue from './components/About.vue';
 import WhaleWatchingVue from './components/WhaleWatching.vue';
 import HotelsVue from './components/Hotels.vue';
+import LoremvikVue from './components/Loremvik.vue';
+import IpsumvatnVue from './components/Ipsumvatn.vue';
+import TravelVue from './components/Travel.vue';
 
 const routes = [{
   path: "/",
@@ -23,6 +26,15 @@ const routes = [{
 }, {
   path: "/hotels",
   component: HotelsVue
+}, {
+  path: "/loremvik",
+  component: LoremvikVue
+}, {
+  path: "/ipsumvatn",
+  component: IpsumvatnVue
+}, {
+  path: "/travel",
+  component: TravelVue
 }];
 
 const router = VueRouter.createRouter({

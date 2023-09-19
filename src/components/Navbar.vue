@@ -9,13 +9,13 @@
             <button class="dropbtn" @click="openSubMenu()">See and Do</button>
             <div class="dropdown-content">
                 <router-link to="/colwdvatn">Coldwatvn</router-link>
-                <router-link to="/">Loremvik</router-link>
-                <router-link to="/">Ipsumvatn</router-link>
+                <router-link to="/loremvik">Loremvik</router-link>
+                <router-link to="/ipsumvatn">Ipsumvatn</router-link>
                 <router-link to="/whales">Whale-Watching</router-link>
             </div>
         </div>
         <router-link to="/hotels">Stay</router-link>
-        <router-link to="/">Get Here</router-link>
+        <router-link to="/travel">Get Here</router-link>
         <router-link to="/about">About</router-link>
         <a class="icon" @click="openMenu()">&#9776;</a>
     </nav>

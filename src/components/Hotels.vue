@@ -21,7 +21,7 @@
             >
             <div>
                 <h2>Turfdwellers</h2>
-                <p>3km from Ipsemvatn</p>
+                <p>3km from Ipsumvatn</p>
                 <p>Self-catering in a traditional house.</p>
                 <p>Rerum veniam quasi a esse illo ab consequuntur eveniet, voluptatem in suscipit veritatis possimus ullam ea quisquam asperiores, reprehenderit velit! Autem, cum.</p>
                 <p>Tel: +5555555 12346 477847474</p>
