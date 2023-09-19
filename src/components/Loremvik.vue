@@ -21,12 +21,6 @@
 
 <style scoped>
 
-/* #container {
-    margin: 100px 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
 
 img {
     max-width: 320px;
