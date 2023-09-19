@@ -9,8 +9,8 @@
             <button class="dropbtn" @click="openSubMenu()">See and Do</button>
             <div class="dropdown-content">
                 <router-link to="/colwdvatn">Coldwatvn</router-link>
-                <router-link to="/">Loremvik</router-link>
-                <router-link to="/">Ipsumvatn</router-link>
+                <router-link to="/loremvik">Loremvik</router-link>
+                <router-link to="/ipsumvatn">Ipsumvatn</router-link>
                 <router-link to="/whales">Whale-Watching</router-link>
             </div>
         </div>
