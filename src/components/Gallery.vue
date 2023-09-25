@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// Original hover source: https://sirv.com/help/articles/hover-change-image/
-// basically changes opacity on hover
-// not used because I can't line it up nicely
 
 export interface ImageDetails {
     source?: string;

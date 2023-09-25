@@ -1,5 +1,8 @@
 # Sydfjords Tourism Page
+
 A practice project to teach myself responsive web design with Vue. The concept here is a tourism page for a fictional region inspired by Patagonia and Iceland, using [this project](https://www.frontendpractice.com/projects/monogram) as a springboard.
+
+Suggestions on how to improve this are welcome!
 
 ## Building
 
@@ -10,6 +13,29 @@ This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands
 - `pnpm run build` runs a production build. This is also used during the automated deployment.
 - `pnpm run preview` deploys a local preview of the production build.
 - `pnpm update` updates all outdated dependencies.
+
+The build includes an imagemin task.
+
+### Deploying
+
+The build uses a GitHub Action ([view build file](.github/workflows/build.yml)) to build the app and then deploys the contents of the `dist/` folder as a static page.
+
+## Accessibility
+
+I manually run this through the WAVE extension for Firefox. It hasn't reported anything yet, but improvements are welcome (especially ways to automate this).
+
+## Notes on responsiveness
+
+The targeted screen widths for this are:
+
+- 320 pixels
+- 480
+- 600
+- 800
+- 1080
+- 1920 pixels (largest).
+
+Some pages use different line lengths.
 
 ## Credits/Sources
 
