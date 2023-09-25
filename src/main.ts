@@ -10,6 +10,7 @@ import HotelsVue from './components/Hotels.vue';
 import LoremvikVue from './components/Loremvik.vue';
 import IpsumvatnVue from './components/Ipsumvatn.vue';
 import TravelVue from './components/Travel.vue';
+import { i18n } from './i18n';
 
 const routes = [{
   path: "/",
@@ -44,4 +45,5 @@ const router = VueRouter.createRouter({
 
 const app = createApp(App);
 app.use(router);
+app.use(i18n);
 app.mount('#app');

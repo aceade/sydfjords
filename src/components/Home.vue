@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import GalleryWithHover, { ImageDetails } from './GalleryWithHover.vue';
+import Gallery, { ImageDetails } from './Gallery.vue';
 
 const gallery: ImageDetails[] = [{
   source: "/sydfjords/borealis-480w.webp",
@@ -35,7 +35,7 @@ const gallery: ImageDetails[] = [{
      src="/sydfjords/hero-480w.webp"
      alt="Snowy mountains above a lake in a wild setting">
      <h1>Welcome to a land steeped in magic</h1>
-    <GalleryWithHover v-bind:images="gallery"></GalleryWithHover>
+    <Gallery v-bind:images="gallery"></Gallery>
 </template>
 
 <style scoped>
