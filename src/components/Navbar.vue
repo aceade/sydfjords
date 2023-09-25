@@ -4,24 +4,41 @@
 <template>
     <img id="logo" alt="" src="/sydfjords/icons/Sydfjords_Logo_1.png">
     <nav class="topnav">
-        <router-link to="/">Home</router-link>
         <div class="dropdown">
-            <button class="dropbtn" @click="openSubMenu()">See and Do</button>
+            <button className="dropbtn" @click="openSubMenu()">
+                <img src="/sydfjords/icons/globe.svg" v-bind:alt="$t('navbar.changeLang.alt')" v-bind:title="$t('navbar.changeLang.title')" />
+            </button>
             <div class="dropdown-content">
-                <router-link to="/colwdvatn">Coldwatvn</router-link>
-                <router-link to="/loremvik">Loremvik</router-link>
-                <router-link to="/ipsumvatn">Ipsumvatn</router-link>
-                <router-link to="/whales">Whale-Watching</router-link>
+                <button class="langButton" @click="$i18n.locale = locale" v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`">{{ getNativeName(locale) }}</button>
             </div>
         </div>
-        <router-link to="/hotels">Stay</router-link>
-        <router-link to="/travel">Get Here</router-link>
-        <router-link to="/about">About</router-link>
+        <router-link to="/">{{ $t('navbar.home') }}</router-link>
+        <div class="dropdown">
+            <button class="dropbtn" @click="openSubMenu()">{{ $t('navbar.see') }}</button>
+            <div class="dropdown-content">
+                <router-link to="/colwdvatn">{{ $t('navbar.colwdvatn') }}</router-link>
+                <router-link to="/loremvik">{{ $t('navbar.loremvik') }}</router-link>
+                <router-link to="/ipsumvatn">{{ $t('navbar.ipsumvatn') }}</router-link>
+                <router-link to="/whales">{{ $t('navbar.whales') }}</router-link>
+            </div>
+        </div>
+        <router-link to="/hotels">{{ $t('navbar.hotels') }}</router-link>
+        <router-link to="/travel">{{ $t('navbar.travel') }}</router-link>
+        <router-link to="/about">{{ $t('navbar.about') }}</router-link>
         <a class="icon" @click="openMenu()">&#9776;</a>
     </nav>
 </template>
 
 <script setup lang="ts">
+
+const localeNames: {[index: string]: string} = {
+    ar: "عربي",
+    de: "Deutsch",
+    ga: "Gaeilge",
+    it: "Italiano",
+    ja: "日本語",
+    en: "English"
+};
 
 document.onreadystatechange = () => {
     if (document.readyState === "complete") {
@@ -40,6 +57,9 @@ document.onreadystatechange = () => {
     }
 }
 
+function getNativeName(locale: string) {
+    return localeNames[locale] || "English";
+}
 
 function openMenu() {
     const nav = document.querySelector("nav");
@@ -98,6 +118,12 @@ function openSubMenu() {
     opacity: 0.85;
 }
 
+select {
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 .topnav {
     overflow: hidden;
     float:right;
@@ -124,6 +150,12 @@ function openSubMenu() {
 .dropdown {
     float: left;
     overflow: hidden;
+}
+
+.langButton {
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 /* Style the dropdown button to fit inside the topnav */
