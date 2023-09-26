@@ -40,15 +40,14 @@
         <h2>About</h2>
         <div id="about">
             <p>This is a practice project to get better at responsive web design. It was originally derived from <a href="https://www.frontendpractice.com/projects/monogram">this practice project</a>, but I decided to create a tourism page for a fictional setting that is part Patagonia, part Iceland.</p>
-            <p>The email form above doesn't actually send anything. It just says that after a random delay to simulate network latency.</p>
-            <p>If you want to take a look at the source code, you can <a href="https://github.com/aceade/sydfjords">find it here</a>.</p>
+            <p>The email form above doesn't actually send an email; it just posts a request to an endpoint that echoes the body back. If you want to take a look at the source code, you can <a href="https://github.com/aceade/sydfjords">find it here</a>.</p>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 
-function mockSend(event: Event) {
+async function mockSend(event: Event) {
     event.preventDefault();
 
     // one downside to TypeScript: I have to do all this casting crap
@@ -59,16 +58,22 @@ function mockSend(event: Event) {
     let validation = validateDetails(name, email, message);
 
     if (validation.nameValid && validation.emailValid && validation.messageValid) {
-        let delay: number = Math.random() * 3000;
-        setTimeout(()=>{
-            notifyResult("Your message has been sent");
-        }, delay);
+        let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
+            method: "POST",
+            body: JSON.stringify({
+                name, email, message
+            })
+        });
+        if (response.status === 200) {
+            notifyResult("Your email has been 'sent'")
+        } else {
+            notifyResult("Could not send your email. Please try again later")
+        }
     } else {
-        let message = "Please fill out all fields";
-        notifyResult(message);
+        notifyResult("Please fill out all fields");
     }
-
 }
+
 
 function validateDetails(name: string, email: string, message: string) {
     console.log(name, email, message);
@@ -139,7 +144,7 @@ function notifyResult(result: string) {
         box-sizing: border-box;
     }
 
-    #emailForm label {
+    #emailForm label, input, textarea {
         font-size: 1.2rem;
     }
     #emailForm button, p {
