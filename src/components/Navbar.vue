@@ -6,7 +6,7 @@
     <nav class="topnav">
         <div class="dropdown">
             <button className="dropbtn" @click="openSubMenu()">
-                <img src="/sydfjords/icons/globe.svg" v-bind:alt="$t('navbar.changeLang.alt')" v-bind:title="$t('navbar.changeLang.title')" />
+                <img src="/sydfjords/icons/globe.svg" id="changeLang" v-bind:alt="$t('navbar.changeLang.alt')" v-bind:title="$t('navbar.changeLang.title')" />
             </button>
             <div class="dropdown-content">
                 <button class="langButton" @click="$i18n.locale = locale" v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`">{{ getNativeName(locale) }}</button>
@@ -122,6 +122,13 @@ select {
     font-weight: bold;
     padding: 5px;
     border-radius: 5px;
+}
+
+/*
+ * Invert the colour of the change language icon so it's easier to see.
+ */
+#changeLang {
+    filter: invert();
 }
 
 .topnav {
