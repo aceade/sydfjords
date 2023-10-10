@@ -116,6 +116,7 @@ function openSubMenu() {
     max-width: 100px;
     border-radius: 10%;
     opacity: 0.85;
+    margin-top: 4px;
 }
 
 select {

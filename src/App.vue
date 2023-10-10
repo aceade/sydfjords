@@ -23,6 +23,7 @@ main {
   align-items: center;
   margin: 0 auto;
   justify-content: center;
+  background-color: #f2f2f2;
 }
 
 
