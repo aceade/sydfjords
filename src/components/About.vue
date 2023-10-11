@@ -27,14 +27,14 @@
         <div id="emailForm">
             <form>
                 <label for="name">Your name</label>
-                <input id="name" required minlength="1">
+                <input id="name" v-model="name" required minlength="1">
                 <label for="email">Your address</label>
-                <input type="email" id="email" required>
+                <input type="email" v-model="email" id="email" required minLength="1">
                 <label for="message">Your query</label>
-                <textarea id="message" required minlength="1"></textarea>
+                <textarea id="message" v-model="message" required minlength="1"></textarea>
                 <button @click="mockSend">Submit</button>
-                <p id="submitStatus"></p>
             </form>
+            <p id="submitStatus"><span>{{ statusText }}</span></p>
         </div>
 
         <h2>About</h2>
@@ -46,23 +46,28 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+
+// define references
+const name = ref("");
+const email = ref("");
+const message = ref("");
+const statusText = ref("")
 
 async function mockSend(event: Event) {
     event.preventDefault();
 
-    // one downside to TypeScript: I have to do all this casting crap
-    let name: string = (document.getElementById("name") as HTMLInputElement).value;
-    let email: string = (document.getElementById("email") as HTMLInputElement).value;
-    let message: string = (document.getElementById("message") as HTMLTextAreaElement).value;
-
-    let validation = validateDetails(name, email, message);
+    let validation = validateDetails(name.value, email.value, message.value);
 
     if (validation.nameValid && validation.emailValid && validation.messageValid) {
+        let body = {
+            name: name.value,
+            email: email.value,
+            message: message.value
+        }
         let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
             method: "POST",
-            body: JSON.stringify({
-                name, email, message
-            })
+            body: JSON.stringify(body)
         });
         if (response.status === 200) {
             notifyResult("Your email has been 'sent'")
@@ -70,13 +75,13 @@ async function mockSend(event: Event) {
             notifyResult("Could not send your email. Please try again later")
         }
     } else {
+        console.log("Invalid!!");
         notifyResult("Please fill out all fields");
     }
 }
 
 
 function validateDetails(name: string, email: string, message: string) {
-    console.log(name, email, message);
     return {
         nameValid: name?.length > 1,
         emailValid: email?.length > 1,
@@ -85,14 +90,16 @@ function validateDetails(name: string, email: string, message: string) {
 }
 
 function notifyResult(result: string) {
-    let submitStatus = (document.getElementById("submitStatus") as HTMLParagraphElement);
-    submitStatus.textContent = result;
+    statusText.value = result;
     setTimeout(() => {
-        submitStatus.textContent = "";
+        statusText.value = "";
     }, 3000);
 }
 
 
+</script>
+
+<script>
 </script>
 
 <style scoped>
