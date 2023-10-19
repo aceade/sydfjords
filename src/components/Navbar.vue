@@ -5,17 +5,17 @@
     <img id="logo" alt="" src="/sydfjords/icons/Sydfjords_Logo_1.png">
     <nav class="topnav">
         <div class="dropdown">
-            <button className="dropbtn" @click="openSubMenu()">
+            <button className="dropbtn" @click="openSubMenu('languageMenu')">
                 <img src="/sydfjords/icons/globe.svg" id="changeLang" v-bind:alt="$t('navbar.changeLang.alt')" v-bind:title="$t('navbar.changeLang.title')" />
             </button>
-            <div class="dropdown-content">
+            <div class="dropdown-content" id="languageMenu">
                 <button class="langButton" @click="$i18n.locale = locale" v-for="locale in $i18n.availableLocales" :key="`locale-${locale}`">{{ getNativeName(locale) }}</button>
             </div>
         </div>
         <router-link to="/">{{ $t('navbar.home') }}</router-link>
         <div class="dropdown">
-            <button class="dropbtn" @click="openSubMenu()">{{ $t('navbar.see') }}</button>
-            <div class="dropdown-content">
+            <button class="dropbtn" @click="openSubMenu('attractionMenu')">{{ $t('navbar.see') }}</button>
+            <div class="dropdown-content" id="attractionMenu">
                 <router-link to="/colwdvatn">{{ $t('navbar.colwdvatn') }}</router-link>
                 <router-link to="/loremvik">{{ $t('navbar.loremvik') }}</router-link>
                 <router-link to="/ipsumvatn">{{ $t('navbar.ipsumvatn') }}</router-link>
@@ -73,9 +73,12 @@ function openMenu() {
         }
 
         // prevent this hanging open or needing to be clicked twice upon loading the page
-        const menu = document.querySelector(".dropdown-content");
-        if (menu) {
-            (menu as HTMLElement).style.display = "none";
+        const menus = document.querySelectorAll(".dropdown-content");
+        if (menus) {
+            menus.forEach(menu => {
+                (menu as HTMLElement).style.display = "none"
+            });
+            
         }
     }
     
@@ -86,17 +89,17 @@ function openMenu() {
  */
 function closeAllMenus() {
     (document.querySelector("nav") as HTMLElement).className = "topnav";
-    (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
+    document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "none");
     (document.querySelector(".dropbtn") as HTMLElement).onmouseover = () => {
-        (document.querySelector(".dropdown-content") as HTMLElement).style.display = "block";
+        document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "block");
     }
     (document.querySelector(".dropdown-content") as HTMLElement).onmouseleave = () => {
-        (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
+        document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "none");
     }
 }
 
-function openSubMenu() {
-    const menu = document.querySelector(".dropdown-content");
+function openSubMenu(menuId: string) {
+    const menu = document.getElementById(menuId);
     if (menu) {
         let menuEl = menu as HTMLElement;
         if (menuEl.style.display === "none") {
