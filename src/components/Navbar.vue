@@ -89,12 +89,12 @@ function openMenu() {
  */
 function closeAllMenus() {
     (document.querySelector("nav") as HTMLElement).className = "topnav";
-    (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
+    document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "none");
     (document.querySelector(".dropbtn") as HTMLElement).onmouseover = () => {
-        (document.querySelector(".dropdown-content") as HTMLElement).style.display = "block";
+        document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "block");
     }
     (document.querySelector(".dropdown-content") as HTMLElement).onmouseleave = () => {
-        (document.querySelector(".dropdown-content") as HTMLElement).style.display = "none";
+        document.querySelectorAll(".dropdown-content").forEach(menu => (menu as HTMLElement).style.display = "none");
     }
 }
 
