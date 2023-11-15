@@ -48,9 +48,8 @@ document.onreadystatechange = () => {
             if (link.className === "icon") {
                 continue;
             }
-            // need to declare the event, even if it isn't used, because otherwise clicking the URL does nothing
-            // I suppose this is probably like "extending" the onclick event
-            link.onclick = (_event: Event) => {
+            
+            link.onclick = () => {
                 closeAllMenus();
             }
         }
@@ -223,7 +222,7 @@ select {
 }
 
 /* Show the dropdown menu when the user moves the mouse over the dropdown button */
-.dropdown:hover .dropdown-content {
+.dropdown:hover > .dropdown-content {
     display: block;
 }
 

@@ -2,14 +2,14 @@ import { createApp } from 'vue';
 import './style.css';
 import App from './App.vue';
 import * as VueRouter from "vue-router";
-import Home from './components/Home.vue';
-import Colwdvatn from './components/Colwdvatn.vue';
-import AboutVue from './components/About.vue';
+import Home from './components/HomePage.vue';
+import Colwdvatn from './components/ColwdvatnPage.vue';
+import AboutVue from './components/AboutPage.vue';
 import WhaleWatchingVue from './components/WhaleWatching.vue';
-import HotelsVue from './components/Hotels.vue';
-import LoremvikVue from './components/Loremvik.vue';
-import IpsumvatnVue from './components/Ipsumvatn.vue';
-import TravelVue from './components/Travel.vue';
+import HotelsVue from './components/HotelsPage.vue';
+import LoremvikVue from './components/LoremvikPage.vue';
+import IpsumvatnVue from './components/IpsumvatnPage.vue';
+import TravelVue from './components/TravelPage.vue';
 import { i18n } from './i18n';
 
 const routes = [{

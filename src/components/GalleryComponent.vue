@@ -15,7 +15,7 @@ defineProps<{images: ImageDetails[]}>();
 <template>
     <div class="gallery">
         <div class="galleryItem" v-for="item of images">
-            <img loading="lazy" class="defaultImage" v-bind:srcset="item.srcset" v-bind:sizes="item.sizes" v-bind:alt="item.altText" v-bind:src="item.source">
+            <img loading="lazy" class="defaultImage" v-bind:key="images.indexOf(item)" v-bind:srcset="item.srcset" v-bind:sizes="item.sizes" v-bind:alt="item.altText" v-bind:src="item.source">
             <p>{{ item.caption }}</p>
         </div>
     </div>
