@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Gallery, { ImageDetails } from './Gallery.vue';
+import Gallery, { ImageDetails } from './GalleryComponent.vue';
 
 const gallery: ImageDetails[] = [{
   source: "/sydfjords/borealis-480w.webp",
