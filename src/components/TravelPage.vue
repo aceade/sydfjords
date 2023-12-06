@@ -5,7 +5,7 @@
     <div id="container">
         <h1>How to get here</h1>
 
-        <h2>Take The Train</h2>
+        <h2> <a href="https://aceade.github.io/colwdvatn-rails/" target="_blank">Take The Train</a></h2>
         <div id="trains">
             <img class="mainImage" src="/sydfjords/travel/train-480.webp" alt="A steam train in the snow"
                 sizes="(max-width: 400px) 320px, (max-width: 600px) 480px, max-width: 800px) 600px, 1080px"
@@ -16,7 +16,7 @@
                 srcset="/sydfjords/travel/train2-320w.webp 320w, /sydfjords/travel/train2-480w.webp 480w, /sydfjords/travel/train2-800w.webp 800w, /sydfjords/travel/train2-1080w.webp 1080w"
             >
         </div>
-        <p>A week on the train from Tinland through the pine forests and valleys.</p>
+        <p>Two days on the train from Tinland through the pine forests and valleys. Four days from Levarche.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
         <h2>By Sea</h2>
