@@ -24,10 +24,10 @@ devDependencies:
     version: 6.11.0(eslint@8.53.0)(typescript@5.2.2)
   '@vheemstra/vite-plugin-imagemin':
     specifier: ^1.0.11
-    version: 1.0.11(vite@4.4.12)
+    version: 1.0.11(vite@4.5.2)
   '@vitejs/plugin-vue':
     specifier: ^4.3.4
-    version: 4.3.4(vite@4.4.12)(vue@3.3.4)
+    version: 4.3.4(vite@4.5.2)(vue@3.3.4)
   eslint:
     specifier: ^8.53.0
     version: 8.53.0
@@ -44,8 +44,8 @@ devDependencies:
     specifier: ^5.2.2
     version: 5.2.2
   vite:
-    specifier: ^4.4.12
-    version: 4.4.12
+    specifier: ^4.5.2
+    version: 4.5.2
   vue-tsc:
     specifier: ^1.8.11
     version: 1.8.11(typescript@5.2.2)
@@ -548,7 +548,7 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vheemstra/vite-plugin-imagemin@1.0.11(vite@4.4.12):
+  /@vheemstra/vite-plugin-imagemin@1.0.11(vite@4.5.2):
     resolution: {integrity: sha512-kFVJsG9yBgRIfFG0yQhNmCXUbh10eRpWP5JQcGFpyJZ33HlZmLM78XXnmSM9LxME76f0vqpHeQHLE2c6NQF9rg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -559,17 +559,17 @@ packages:
       fs-extra: 11.1.1
       imagemin: 8.0.1
       is-apng: 1.0.1
-      vite: 4.4.12
+      vite: 4.5.2
     dev: true
 
-  /@vitejs/plugin-vue@4.3.4(vite@4.4.12)(vue@3.3.4):
+  /@vitejs/plugin-vue@4.3.4(vite@4.5.2)(vue@3.3.4):
     resolution: {integrity: sha512-ciXNIHKPriERBisHFBvnTbfKa6r9SAesOYXeGDzgegcvy9Q4xdScSHAmKbNT0M3O0S9LKhIf5/G+UYG4NnnzYw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.12
+      vite: 4.5.2
       vue: 3.3.4
     dev: true
 
@@ -2750,8 +2750,8 @@ packages:
     hasBin: true
     dev: true
 
-  /vite@4.4.12:
-    resolution: {integrity: sha512-KtPlUbWfxzGVul8Nut8Gw2Qe8sBzWY+8QVc5SL8iRFnpnrcoCaNlzO40c1R6hPmcdTwIPEDkq0Y9+27a5tVbdQ==}
+  /vite@4.5.2:
+    resolution: {integrity: sha512-tBCZBNSBbHQkaGyhGCDUGqeo2ph8Fstyp6FMSvTtsXeZSPpSMGlviAOav2hxVTqFcx8Hj/twtWKsMJXNY0xI8w==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
