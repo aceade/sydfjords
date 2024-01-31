@@ -39,14 +39,15 @@
 
         <h2>About</h2>
         <div id="about">
-            <p>This is a practice project to get better at responsive web design. It was originally derived from <a href="https://www.frontendpractice.com/projects/monogram">this practice project</a>, but I decided to create a tourism page for a fictional setting that is part Patagonia, part Iceland.</p>
-            <p>The email form above doesn't actually send an email; it just posts a request to an endpoint that echoes the body back. If you want to take a look at the source code, you can <a href="https://github.com/aceade/sydfjords">find it here</a>.</p>
+            <p>This is a practice project to get better at responsive web design and Vue. It was originally derived from <a href="https://www.frontendpractice.com/projects/monogram">this practice project</a>, but I decided to create a tourism page for a fictional setting that is part Patagonia, part Iceland.</p>
+            <p>The email form above doesn't actually send an email; it just posts a request to an Azure Function that echoes the body back. <a href="https://github.com/aceade/sydfjords">The source code</a> is available for you to look at if you wish.</p>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { makePrediction } from '../sentiment/sentiment';
 
 // define references
 const name = ref("");
@@ -60,10 +61,13 @@ async function mockSend(event: Event) {
     let validation = validateDetails(name.value, email.value, message.value);
 
     if (validation.nameValid && validation.emailValid && validation.messageValid) {
+        const prediction = await makePrediction(message.value);
+        console.info(prediction);
         let body = {
             name: name.value,
             email: email.value,
-            message: message.value
+            message: message.value,
+            sentiment: prediction.score
         }
         let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
             method: "POST",
