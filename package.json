@@ -10,6 +10,7 @@
     "lint": "eslint . --ext ts,vue --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "ml5": "^0.12.2",
     "vue": "^3.3.4",
     "vue-i18n": "9",
     "vue-router": "^4.2.4"
