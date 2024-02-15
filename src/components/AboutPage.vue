@@ -67,11 +67,12 @@ async function mockSend(event: Event) {
             name: name.value,
             email: email.value,
             message: message.value,
-            sentiment: prediction.score
+            sentiment: prediction
         }
-        let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/", {
+        let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/api/email", {
             method: "POST",
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
+            
         });
         if (response.status === 200) {
             notifyResult("Your email has been 'sent'")
