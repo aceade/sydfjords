@@ -40,5 +40,7 @@ Some pages use different line lengths.
 ## Credits/Sources
 
 All images are from [pexels.com](https://www.pexels.com/), except for the logo, which was generated using [Canva](https://canva.com).
+
 The navbar is derived from [this W3Schools example](https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp), with some modifications to fix menus hanging open.
+
 This uses [TensorflowJS](https://www.tensorflow.org/js/) for sentiment analysis when sending a mock email. The endpoint does nothing with the predicted score.
