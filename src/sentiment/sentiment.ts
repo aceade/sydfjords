@@ -1,11 +1,16 @@
-import {sentiment} from 'ml5';
+import * as toxicity from '@tensorflow-models/toxicity';
 
-const model = sentiment("movieReviews", () => {
-    console.info("ml5 loaded");
-    // "warm up" the sentiment analysis so that subsequent 
-    model.predict("ml5 loaded correctly");
+const threshold = 0.9;
+const toxicityLabels: string[] = [];
+
+let model: toxicity.ToxicityClassifier;
+
+toxicity.load(threshold, toxicityLabels).then(loadedModel => {
+    model = loadedModel;
+    // "prewarm" the model
+    model.classify("Model loaded");
 });
 
 export const makePrediction = async (text: string) => {
-    return model.predict(text);
+    return await model.classify(text);
 }

@@ -10,7 +10,9 @@
     "lint": "eslint . --ext ts,vue --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "ml5": "^0.12.2",
+    "@tensorflow-models/tasks": "0.0.1-alpha.8",
+    "@tensorflow-models/toxicity": "^1.2.2",
+    "@tensorflow/tfjs": "^4.17.0",
     "vue": "^3.3.4",
     "vue-i18n": "9",
     "vue-router": "^4.2.4"
