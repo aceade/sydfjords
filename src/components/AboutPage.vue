@@ -53,7 +53,7 @@ import { makePrediction } from '../sentiment/sentiment';
 const name = ref("");
 const email = ref("");
 const message = ref("");
-const statusText = ref("")
+const statusText = ref("");
 
 async function mockSend(event: Event) {
     event.preventDefault();
@@ -61,6 +61,7 @@ async function mockSend(event: Event) {
     let validation = validateDetails(name.value, email.value, message.value);
 
     if (validation.nameValid && validation.emailValid && validation.messageValid) {
+        notifyResult("Sending...")
         const prediction = await makePrediction(message.value);
         console.info(prediction);
         let body = {
