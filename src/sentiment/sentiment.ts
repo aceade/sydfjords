@@ -4,13 +4,17 @@ const threshold = 0.9;
 const toxicityLabels: string[] = [];
 
 let model: toxicity.ToxicityClassifier;
+let modelLoaded = false;
 
-toxicity.load(threshold, toxicityLabels).then(loadedModel => {
+toxicity.load(threshold, toxicityLabels).then(async(loadedModel) => {
     model = loadedModel;
     // "prewarm" the model
-    model.classify("Model loaded");
+    await model.classify("Model loaded").then(() => {
+        console.info("Model loaded");
+        modelLoaded = true;
+    })
 });
 
 export const makePrediction = async (text: string) => {
-    return await model.classify(text);
+    return modelLoaded ? await model.classify(text) : {};
 }
