@@ -47,7 +47,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { makePrediction } from '../sentiment/sentiment';
 
 // define references
 const name = ref("");
@@ -62,13 +61,10 @@ async function mockSend(event: Event) {
 
     if (validation.nameValid && validation.emailValid && validation.messageValid) {
         notifyResult("Sending...")
-        const prediction = await makePrediction(message.value);
-        console.info(prediction);
         let body = {
             name: name.value,
             email: email.value,
             message: message.value,
-            sentiment: prediction
         }
         let response = await window.fetch("https://aceade-express-echo.azurewebsites.net/api/email", {
             method: "POST",
