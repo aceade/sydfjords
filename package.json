@@ -10,6 +10,7 @@
     "lint": "eslint . --ext ts,vue --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "visit-sydfjords": "file:",
     "vue": "^3.5.10",
     "vue-i18n": "^9.14.1",
     "vue-router": "^4.4.5"
@@ -25,6 +26,6 @@
     "imagemin-webp": "^8.0.0",
     "typescript": "^5.6.2",
     "vite": "^4.5.5",
-    "vue-tsc": "^1.8.27"
+    "vue-tsc": "^2.1.6"
   }
 }
