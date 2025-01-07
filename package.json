@@ -7,7 +7,7 @@
     "dev": "vite --host",
     "build": "vue-tsc && vite build",
     "preview": "vite preview --host",
-    "lint": "eslint . --ext ts,vue --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint"
   },
   "dependencies": {
     "visit-sydfjords": "file:",
