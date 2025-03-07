@@ -14,8 +14,6 @@ This uses [pnpm](https://pnpm.io/) instead of npm. However, most of the commands
 - `pnpm run preview` deploys a local preview of the production build.
 - `pnpm update` updates all outdated dependencies.
 
-The build includes an imagemin task.
-
 ### Deploying
 
 The build uses a GitHub Action ([view build file](.github/workflows/build.yml)) to build the app and then deploys the contents of the `dist/` folder as a static page.
